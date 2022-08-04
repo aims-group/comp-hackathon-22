@@ -1,0 +1,11 @@
+Why would a tutorial say:
+
+    Ultimately, the workflow should succeed and you'll end up with the following output printed out when Cromwell finishes:
+
+    {
+        "myWorkflow.myTask.out": "hello world"
+    }
+
+when in reality, it produces 75000 bytes to stderr, 25000 bytes to stdout (in which the above "hello world" is embedded)?  I don't see a --quiet mode, 
+but I'm sure I'll learn about it in the "options file" section. 
+
