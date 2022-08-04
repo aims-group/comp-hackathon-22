@@ -1,0 +1,17 @@
+
+URL: https://cromwell.readthedocs.io/en/stable/tutorials/FiveMinuteIntro/
+
+1.  Need Java:
+
+    (hack) -bash-4.2$ java -version
+    openjdk version "1.8.0_332"
+    OpenJDK Runtime Environment (build 1.8.0_332-b09)
+    OpenJDK 64-Bit Server VM (build 25.332-b09, mixed mode)
+
+    OK!
+
+2.  cromwell download
+
+    link:   https://github.com/broadinstitute/cromwell/releases/download/83/cromwell-83.jar
+
+
