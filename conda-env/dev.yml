@@ -12,7 +12,7 @@ dependencies:
     - numpy=1.22.4
     - pandas=1.4.3
     - xarray=2022.6.0
-    - cwl=3.1.20220802125926
+    - cwltool=3.1.20220802125926
     - miniwdl=1.6.0
     - cromwell=83
 
