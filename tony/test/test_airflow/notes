@@ -1,0 +1,38 @@
+CWL-AIRFLOW
+
+Untarring python_3.8.12_cwl_airflow_master_linux.tar produced a "python3" directory:
+
+(hack-2022) -bash-4.2$ ll python3
+total 0
+drwxr-xr-x. 1 bartoletti1 publishers 1388 Nov 17  2021 bin_portable
+drwxr-xr-x. 1 bartoletti1 publishers  100 Nov 17  2021 python3.8.12
+
+The "installed" airflow material is in
+
+    /home/bartoletti1/hackathon/comp-hackathon-22/packages/python3/bin_portable
+
+    (contains airflow, cwl-airflow, cwltool, [much more])
+
+Initialize with 
+
+    cwl-airflow init [-h] [--home HOME] [--config CONFIG] [--upgrade]
+
+Using the defaults (cwl-airflow init):
+
+    Result:  Returns silently after a minute. Cannot tell what it did.
+
+Using cwl-airflow init --home .
+
+    Result:  current directory contains
+
+        -rw-rw-r--. 1 bartoletti1 publishers  42952 Aug  5  2022 airflow.cfg
+        -rw-r--r--. 1 bartoletti1 publishers 331776 Aug  5  2022 airflow.db
+        drwxrwxr-x. 1 bartoletti1 publishers     32 Aug  5  2022 dags
+        drwxrwxr-x. 1 bartoletti1 publishers     18 Aug  5  2022 logs
+        -rw-r--r--. 1 bartoletti1 publishers   4700 Aug  5  2022 webserver_config.py
+
+    The airflow.cfg contains 248 potential settings
+
+
+
+
