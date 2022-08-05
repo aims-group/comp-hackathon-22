@@ -9,3 +9,37 @@ Why would a tutorial say:
 when in reality, it produces 75000 bytes to stderr, 25000 bytes to stdout (in which the above "hello world" is embedded)?  I don't see a --quiet mode, 
 but I'm sure I'll learn about it in the "options file" section. 
 
+
+The results of execution produced the following additional directories:
+
+    drwxrwxr-x. 1 bartoletti1 publishers     20 Aug  4 09:24 cromwell-executions
+    drwxrwxrwx. 1 bartoletti1 publishers      0 Aug  4 09:58 cromwell-workflow-logs
+
+The "cromwell-executions" directory contains:
+
+    (hack-2022) -bash-4.2$ ll cromwell-executions/
+    drwxrwxr-x. 1 bartoletti1 publishers 216 Aug  4 09:58 myWorkflow
+
+    (hack-2022) -bash-4.2$ ll cromwell-executions/myWorkflow/
+    drwxrwxr-x. 1 bartoletti1 publishers 22 Aug  4 09:56 135e00f0-03ac-467a-8825-8a5d0f1335d7
+    drwxrwxr-x. 1 bartoletti1 publishers 22 Aug  4 09:58 65d8caeb-8f3f-4c4d-a2b5-ac8e2fd8bc0f
+    drwxrwxr-x. 1 bartoletti1 publishers 22 Aug  4 09:24 82c9b382-ce11-4b34-9365-fd5593150fe1
+
+So, for each "named_workflow" that is run, a random-named directory is produced for that execution.
+
+    cromwell-executions/<named_workflow>/<random_name>.
+
+The contents of each random execution directory:
+
+    cromwell-executions/<named_workflow>/<random_name>/call-myTask/execution/
+
+    -rw-rw-r--. 1 bartoletti1 publishers    2 Aug  4 09:56 rc                   (this is the return code)
+    -rw-rw-r--. 1 bartoletti1 publishers 2927 Aug  4 09:56 script               (script auto-generated to conduct the run)
+    -rw-rw-r--. 1 bartoletti1 publishers  457 Aug  4 09:56 script.background    (calls "script.submit" in background)
+    -rw-rw-r--. 1 bartoletti1 publishers  189 Aug  4 09:56 script.submit        (calls "script")
+    -rw-rw-r--. 1 bartoletti1 publishers    0 Aug  4 09:56 stderr
+    -rw-rw-r--. 1 bartoletti1 publishers    0 Aug  4 09:56 stderr.background
+    -rw-rw-r--. 1 bartoletti1 publishers   12 Aug  4 09:56 stdout               (contains: hello world)
+    -rw-rw-r--. 1 bartoletti1 publishers   19 Aug  4 09:56 stdout.background    (contains: <processid>'\n' + hello world)
+
+
